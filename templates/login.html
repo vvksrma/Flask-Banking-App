@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Page Background */
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Container for centering the form */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Card Styling */
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Form Input Styles */
+        .form-control {
+            border-radius: 5px;
+            height: 45px;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        /* Submit Button Styles */
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Flash Message Styling */
+        .alert {
+            font-size: 14px;
+        }
+
+        .text-danger {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <h1 class="text-center mb-4" style="font-size: 2rem; color: #333;">Login</h1>
+                <form method="POST" action="{{ url_for('login') }}">
+                    {{ form.hidden_tag() }} <!-- CSRF Token if using Flask-WTF -->
+                    
+                    <!-- Email Field -->
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <!-- Displaying errors -->
+                        {% for error in form.email.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                        <!-- Displaying errors -->
+                        {% for error in form.password.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+
+                <!-- Flash Messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

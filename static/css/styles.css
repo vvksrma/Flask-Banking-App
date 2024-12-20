@@ -1,0 +1,133 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #004085;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+/* Main Content Styling */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #004085;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form input:focus,
+form button:focus {
+    outline: none;
+    border-color: #004085;
+    box-shadow: 0 0 8px rgba(0, 64, 133, 0.2);
+}
+
+/* Submit button styling */
+form button {
+    background-color: #004085;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+form button:hover {
+    background-color: #003366;
+}
+
+/* Flash Messages Styling */
+.flash {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.flash.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.flash.danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Dashboard Styling */
+.dashboard-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.dashboard-info h3 {
+    color: #004085;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Transfer Page Styling */
+.transfer-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    nav {
+        padding: 10px;
+    }
+}

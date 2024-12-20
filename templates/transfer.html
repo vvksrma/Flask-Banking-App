@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer</title>
+</head>
+<body>
+    <h2>Transfer</h2>
+    <form method="POST" action="{{ url_for('transfer') }}">
+        {{ form.hidden_tag() }}
+
+        <div>
+            <label for="recipient">Recipient Username:</label>
+            {{ form.recipient(class="form-control") }}
+        </div>
+
+        <div>
+            <label for="amount">Amount:</label>
+            {{ form.amount(class="form-control") }}
+        </div>
+
+        <div>
+            <button type="submit">Transfer</button>
+        </div>
+    </form>
+</body>
+</html>
