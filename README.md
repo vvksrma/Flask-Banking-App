@@ -108,7 +108,7 @@ A simple banking application built with Flask. This app allows users to register
 
 ## Usage
 
-- Visit `http://yourdomain.com` to access the application.
+- Visit `link` to access the application.
 - Register a new user account.
 - Log in with your credentials.
 - Use the dashboard to view your account balance, transaction history, and perform transfers.
@@ -128,4 +128,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or suggestions, please open an issue or contact the repository owner at [your_email@example.com].
+For any questions or suggestions, please open an issue or contact the repository owner at [vvksrmacse@gmail.com].
